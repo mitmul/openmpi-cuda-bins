@@ -1,4 +1,4 @@
-# openmpi-cuda
+# openmpi-cuda-bins
 
 Pre-built binaries of OpenMPI w/ CUDA &amp; verbs
 
