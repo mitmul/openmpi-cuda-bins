@@ -22,4 +22,4 @@ RUN curl -L -O https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.3
     && make -j32 \
     && make install
 
-RUN tar zcf /opt/openmpi openmpi-4.0.3
+RUN tar zcf openmpi-4.0.3.tar.gz /opt/openmpi

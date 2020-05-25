@@ -17,9 +17,16 @@ will generate the following three files:
 Copy one of the generated files into your environment where you want to use OpenMPI w/ CUDA and Infiniband, and install it like this:
 
 ```bash
+cd /
 tar zxf openmpi-4.0.3-cuda102.tar.gz
-cd openmpi-4.0.3
-sudo make install
 ```
 
-The archive contains all the sources too, so please do not forget to remove them if you want to save the disk space.
+You have to run this as `root`.
+It expands the built binaries and headers etc. into `/opt/openmpi`, so that you will add some environment variables to make them visible from other libraries:
+
+```bash
+export PATH=/opt/openmpi/bin:$PATH
+export CPATH=/opt/openmpi/include:$CPATH
+export LIBRARY_PATH=/opt/openmpi/lib:$LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/openmpi/lib:$LD_LIBRARY_PATH
+```
