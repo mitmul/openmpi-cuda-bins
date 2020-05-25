@@ -18,7 +18,8 @@ RUN curl -L -O https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.3
     && tar zxf openmpi-4.0.3.tar.gz \
     && rm -rf openmpi-4.0.3.tar.gz \
     && cd openmpi-4.0.3 \
-    && ./configure --with-cuda --with-verbs \
-    && make -j32
+    && ./configure --with-cuda --with-verbs --prefix=/opt/openmpi \
+    && make -j32 \
+    && make install
 
-RUN tar zcf openmpi-4.0.3.tar.gz openmpi-4.0.3
+RUN tar zcf /opt/openmpi openmpi-4.0.3
